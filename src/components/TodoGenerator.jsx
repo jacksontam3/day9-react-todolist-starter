@@ -1,24 +1,24 @@
-import {useContext, useState} from "react";
-import {TodoContext} from "../App";
+import { useContext, useState } from "react";
+import { TodoListContext } from "../context/TodoListContext";
 
 const TodoGenerator = () => {
     const [text, setText] = useState("")
-    const {dispatch} = useContext(TodoContext)
+    const { dispatch } = useContext(TodoListContext);
 
-    const handleChange = (event) =>{
+    const handleChange = (event) => {
         setText(event.target.value)
     }
 
     const handleAdd = () => {
-       dispatch({type: "ADD", payload: text})
+            dispatch({ type: "ADD", payload: text });
     }
 
-    return (
-        <div>
+    return(
+        <div className={"todo-generator-wrapper"}>
             <input maxLength={100} value={text} onChange={handleChange}/>
             <button onClick={handleAdd}>add</button>
         </div>
-    )
+    );
 }
 
 export default TodoGenerator;
