@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import { TodoListContext } from "../context/TodoListContext";
+import "./TodoGenerator.css";
 
 const TodoGenerator = () => {
     const [text, setText] = useState("")
