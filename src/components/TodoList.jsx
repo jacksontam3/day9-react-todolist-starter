@@ -1,10 +1,12 @@
 import TodoGroup from "./TodoGroup";
+import TodoGenerator from "./TodoGenerator";
 
 const TodoList = () => {
   return (
       <div>
-        This is the TodoList Component.
-        <TodoGroup />
+          <h2>{"Todo List"}</h2>
+          <TodoGroup/>
+          <TodoGenerator/>
       </div>
   );
 }
