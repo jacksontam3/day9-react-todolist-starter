@@ -1,7 +1,8 @@
 const TodoItem = (prop) => {
     return (
         <div>
-            {prop.todo.text}
+            <div>{prop.todo.text}</div>
+            <button>X</button>
         </div>
     );
 }
