@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { TodoListContext } from "../context/TodoListContext";
 import "./TodoGenerator.css";
+import {addTodoList} from "../api/todo";
 
 const TodoGenerator = () => {
     const [text, setText] = useState("")
@@ -10,9 +11,11 @@ const TodoGenerator = () => {
         setText(event.target.value)
     }
 
-    const handleAdd = () => {
+     const handleAdd = async () => {
         if (text.trim()) {
-            dispatch({ type: "ADD", payload: text });
+            const newData = await addTodoList({id:null ,text: text, done: false })
+            dispatch({ type: "ADD", payload: newData });
+            setText("");
         }
     }
 
