@@ -2,7 +2,8 @@ import React from "react";
 import './App.css';
 import TodoList from "./components/TodoList";
 import {TodoListProvider} from "./context/TodoListContext";
-import {BrowserRouter as Router, Navigate, Route, Routes} from "react-router-dom";
+import {BrowserRouter as Router, Link, Route, Routes} from "react-router-dom";
+import DoneList from "./components/DoneList";
 
 function NotFoundPage (){
     return <div>NotFoundPage</div>
@@ -13,8 +14,12 @@ function App() {
     <div className="App">
       <TodoListProvider>
           <Router>
+              <nav>
+                  <Link to={"/"}>Home</Link> | <Link to={"/done-list"}>Done-List</Link>
+              </nav>
               <Routes>
                   <Route path = {"/"} element={<TodoList/>}></Route>
+                  <Route path={"/done-list"} element={<DoneList/>}></Route>
                   <Route path={"/todo-list"}  element = {<TodoList/>}></Route>
                   <Route path={"*"} element = {<NotFoundPage/>}></Route>
               </Routes>
