@@ -23,3 +23,12 @@ export const deleteById = async (id) => {
         throw error;
     }
 }
+
+export const update = async (newData) => {
+        try {
+            const response = await instance.put(`TodoItem/${newData.id}`, newData);
+            return response.data;
+        } catch (error) {
+            throw error;
+        }
+}
