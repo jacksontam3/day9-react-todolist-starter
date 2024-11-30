@@ -14,3 +14,12 @@ export const addTodoList = async (newData) => {
     const response = await instance.post("TodoItem", newData);
     return response.data;
 }
+
+export const deleteById = async (id) => {
+    try {
+        const response = await instance.delete(`TodoItem/${id}`);
+        return response.data;
+    } catch (error) {
+        throw error;
+    }
+}

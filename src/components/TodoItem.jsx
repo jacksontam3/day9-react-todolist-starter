@@ -1,6 +1,7 @@
 import { TodoListContext } from "../context/TodoListContext";
 import { useContext } from "react";
 import "./TodoItem.css";
+import {addTodo, deleteById} from "../api/todo";
 
 const TodoItem = ({todo}) => {
     const { dispatch } = useContext(TodoListContext);
@@ -9,9 +10,12 @@ const TodoItem = ({todo}) => {
         dispatch({ type: "TOGGLE", payload: todo.id });
     };
 
-    const removeTodo = () => {
-        dispatch({ type: "REMOVE", payload: todo.id })
+    const removeTodo = async () => {
+        const deletedTodo = await deleteById(todo.id);
+        dispatch({type: "REMOVE", payload: todo.id})
     };
+
+
     return (
         <div className={"todo-item-wrapper"}>
             <div className={`todo-text ${todo.done ? "done" : ""}`} onClick={handleToggleTodo}>{todo.text}</div>
