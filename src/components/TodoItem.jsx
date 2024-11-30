@@ -1,6 +1,6 @@
 import { TodoListContext } from "../context/TodoListContext";
 import { useContext } from "react";
-import "./TodoItem.css";
+import "../CSS/TodoItem.css";
 import {deleteById, update} from "../api/todo";
 
 const TodoItem = ({todo}) => {

@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { TodoListContext } from "../context/TodoListContext";
-import "./TodoGenerator.css";
+import "../CSS/TodoGenerator.css";
 import {addTodoList} from "../api/todo";
 
 const TodoGenerator = () => {
