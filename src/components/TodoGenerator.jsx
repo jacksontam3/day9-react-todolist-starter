@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { TodoListContext } from "../context/TodoListContext";
 import "../CSS/TodoGenerator.css";
+import {Button } from "antd";
 import {addTodoList} from "../api/todo";
 
 const TodoGenerator = () => {
@@ -22,7 +23,7 @@ const TodoGenerator = () => {
     return(
         <div className={"todo-generator-wrapper"}>
             <input maxLength={100} value={text} onChange={handleChange}/>
-            <button onClick={handleAdd}>add</button>
+            <Button onClick={handleAdd}>add</Button>
         </div>
     );
 }
