@@ -5,6 +5,11 @@ export const getTodoList = async () => {
     return response.data;
 }
 
+export const getTodoById = async (id) => {
+    const response = await instance.get(`TodoItem/${id}`);
+    return response.data;
+}
+
 export const addTodoList = async (newData) => {
     const response = await instance.post("TodoItem", newData);
     return response.data;

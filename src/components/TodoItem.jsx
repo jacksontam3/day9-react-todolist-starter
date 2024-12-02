@@ -3,6 +3,7 @@ import { TodoListContext } from "../context/TodoListContext";
 import "../CSS/TodoItem.css";
 import { deleteById, update } from "../api/todo";
 import { Button, Modal, Input } from "antd";
+import TodoDetails from "./TodoDetails";
 
 const TodoItem = ({ todo }) => {
     const { dispatch } = useContext(TodoListContext);
@@ -45,6 +46,8 @@ const TodoItem = ({ todo }) => {
             <Button type="link" danger onClick={removeTodo}>
                 Delete
             </Button>
+
+            <TodoDetails todoId={todo.id} />
 
             <Modal
                 title="Edit Todo"
