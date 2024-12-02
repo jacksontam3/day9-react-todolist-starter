@@ -6,6 +6,7 @@ import {BrowserRouter as Router, Link, Route, Routes} from "react-router-dom";
 import DoneList from "./components/DoneList";
 import HelpPage from "./components/HelpPage";
 import Page404 from "./components/Page404";
+import Page500 from "./components/Page500";
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
                   <Route path={"/done-list"} element={<DoneList/>}></Route>
                   <Route path={"/todo-list"}  element = {<TodoList/>}></Route>
                   <Route path={"/not-found"}  element = {<Page404/>}></Route>
+                  <Route path={"/server-error"} element = {<Page500/>}></Route>
                   <Route path={"/helpPage"} element = {<HelpPage/>}></Route>
                   <Route path={"*"} element = {<Page404/>}></Route>
 

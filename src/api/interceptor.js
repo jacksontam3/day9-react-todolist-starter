@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const instance = axios.create({
-    baseURL: "https://67495c7c868020296630aaa8.mockapi123.io/api/v1/"
+    baseURL: "https://67495c7c868020296630aaa8.mockapi.io/api/v1/"
 });
 
 instance.interceptors.request.use(
@@ -13,6 +13,9 @@ instance.interceptors.request.use(
     (error) => {
         if(error.response && error.response.status === 404) {
           window.location.href = "/not-found";
+        }
+        if(error.response && error.response.status === 500) {
+            window.location.href = "/server-error";
         }
 
         console.log("request error", error);
