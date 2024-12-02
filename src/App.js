@@ -5,10 +5,8 @@ import {TodoListProvider} from "./context/TodoListContext";
 import {BrowserRouter as Router, Link, Route, Routes} from "react-router-dom";
 import DoneList from "./components/DoneList";
 import HelpPage from "./components/HelpPage";
+import Page404 from "./components/Page404";
 
-function NotFoundPage (){
-    return <div>NotFoundPage</div>
-}
 
 function App() {
   return (
@@ -22,8 +20,9 @@ function App() {
                   <Route path = {"/"} element={<TodoList/>}></Route>
                   <Route path={"/done-list"} element={<DoneList/>}></Route>
                   <Route path={"/todo-list"}  element = {<TodoList/>}></Route>
+                  <Route path={"/not-found"}  element = {<Page404/>}></Route>
                   <Route path={"/helpPage"} element = {<HelpPage/>}></Route>
-                  <Route path={"*"} element = {<NotFoundPage/>}></Route>
+                  <Route path={"*"} element = {<Page404/>}></Route>
 
               </Routes>
           </Router>
